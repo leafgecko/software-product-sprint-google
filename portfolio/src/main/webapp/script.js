@@ -26,3 +26,15 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function addRandomQuote() {
+  const quote =
+      ['We cannot change the cards we are dealt, just how we play the hand.', 'When it comes to men who are romantically interested in you, it’s really simple. Just ignore everything they say and only pay attention to what they do.', 'The key question to keep asking is, Are you spending your time on the right things? Because time is all you have.', 'Showing gratitude is one of the simplest yet most powerful things humans can do for each other.'];
+
+  // Pick a random greeting.
+  const quote = quote[Math.floor(Math.random() * quote.length)];
+
+  // Add it to the page.
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
+}
