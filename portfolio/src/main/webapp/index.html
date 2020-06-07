@@ -2,25 +2,207 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Katherine's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="script.js"></script>
   </head>
+
+  
   <body>
-    <div id="content">
+
+    <!-- Navigation -->
+    <nav class="topnav" id="myTopnav">
+        <a href="#home" class="w3-button w3-bar-item">Home</a>
+        <a href="#resume" class="w3-button w3-bar-item">Resume</a>
+        <a href="#projects" class="w3-button w3-bar-item">Projects</a>
+        <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <!-- Slide Show -->
+    <section>
+        <img class="mySlides" src="images/zion-national-park.jpeg"
+        style="height:500px">
+        <img class="mySlides" src="images/bryce_canyon_snow_sunset.jpg"
+        style="height:500px">
+        <img class="mySlides" src="images/lake_tahoe.jpg"
+        style="height:500px">
+        <img class="mySlides" src="images/yosemite_park.jpg"
+        style="height:500px">
+    </section>
+
+    <!-- Short Description -->
+    <section class="w3-container w3-center w3-content" style="max-width:600px">
+        <h2 class="w3-wide">Katherine Kee's Adventures</h2>
+        <p class="w3-opacity"><i>i love travelling</i></p>
+    </section>
+    
+    <!-- Intro -->
+    <div style="padding-left:16px" id="content">
       <h1>Katherine Kee's Portfolio</h1>
       <p>I am a computer engineering student who loves animal documentaries and behaviour studies!</p>
-      <p>I enjoy long walks out in nature, one of my favourite places was hiking at Zion National Park</p>
-      <img src="images/zion-national-park.jpeg" alt="Zion National Park"/>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <p>I enjoy travelling and having long walks out in nature, one of my favourite places was hiking at Zion National Park</p>
       
       <p>Click here to get a random quote from my favourite book 'The Last Lecture' by Randy Pausch:</p>
       <button onclick="addRandomQuote()">Quote</button>
       <div id="quote-container"></div>
     </div>
+
+    <hr class="dashed">
+
+    <!-- Resume -->
+
+    <div style="padding-left:100px" id="resume">
+      <h1> Experience </h1>
+
+      <h2>OPEN ROBOTICS | SOFTWARE ENGINEERING INTERN</h2>
+      <p>June 2019 – Aug 2019</p>
+      <ul>
+        <li>Assisted in developing a (Open Source) ROS-based, high speed live stereo-vision system for robots</li>
+        <li>Incorporate CMake to automate stereo calibration updates through a server-client</li>
+        <li>Generated 3D point-clouds & disparity img from OpenCV block matching algo with C++ and Python</li>
+      </ul>
+
+      <h2>PBA SINGAPORE | INDUSTRIAL SYSTEMS INTERN</h2>
+      <p>Aug 2017 – Feb 2018</p>
+      <ul>
+        <li>Assisted in designing & assembling 2 Industry 4.0 AGVs & showroom</li>
+        <li>Created PID control console application, Scripted Universal-Robots (Cobot)</li>
+      </ul>
+
+      <h1> Co-Curricular Activities </h1>
+
+      <h2>GOOGLE | DEVELOPER STUDENT CLUB</h2>
+      <p>2019 - Present | Core Team Member</p>
+      <ul>
+        <li>Organize Machine Learning workshops for NTU student community</li>
+      </ul>
+
+      <h2>MAE ROBOTICS | NANYANG TECHNOLOGICAL UNIVERSITY</h2>
+      <p>2018 – Present | Tech Director, Vice President</p>
+      <ul>
+        <li>Oversee & approve project proposals, analyzing viability of work-flow schedule</li>
+        <li>Conduct Arduino, uC and NAS Server on Raspberry Pi workshops to members</li>
+      </ul>
+
+      <h2>MICROSOFT | STUDENT PARTNER (MSP)</h2>
+      <p>2016 – Present</p>
+      <ul>
+        <li>Learn various Azure Portal applications: Function App, ML-Image Recognition, etc</li>
+        <li>Taught applications of Azure & spoke at events (e.g. Philanthropy Summit, Tech Sat)</li>
+      </ul>
+
+    </div>
+
+
+    <hr class="dashed">
+
+    <!-- Projects -->
+    <div style="padding-left:100px" id="projects">
+      <h1> Projects </h1>
+
+      <h2>Doodler Bot</h2>
+
+        <p>What it does </p>
+        <p>It takes in a .svg image in Processing, and then processes it to be doodled out by the robot. It opens the possibility of being able to print out a small digital image into a much larger one. </p>
+       
+        <p>Hardware</p>
+        <p>For the hardware, we assembled a 2 wheel drive robot with a caster wheel on an acrylic chassis. To control the motors in 2 directions, we used a L298N Motor Controller.</p>
+        <p>For sending the paths parsed from the SVG files, we use a Raspberry Pi to parse the SVG file into paths for the robot, then send the paths over Serial to an Arduino. However, due to insufficient voltage and battery capacity, we decided to move all the motor controls onto the Raspberry Pi.</p>
+        <p>After we managed to control the motors using the Raspberry Pi, we realize that calibrating the motors was very difficult without any feedback or knowledge about the robot's position, thus we tried to interface a MPU6050 Gyroscope and Accelerometer with the RPi over the I2C bus. Using a Gyroscope would eliminate the voltage regulating issues that caused discrepancies in the fine movements of the robot. However, after interfacing, we realized that we were not able to get reliable gyroscope position data from the sensor.</p>
+        <p>In a last attempt to obtain a reliable feedback loop for the robot, we interfaced an RPi Sense Hat. In order to fit both the external GPIO pins, we wired the necessary pins from the Sense Hat individually to a breadboard and then to the RPi. Using it's onboard gyroscope data, easier interfacing made turns of the robot more precise.</p>
+        <p>The robot motors are currently powered with 4 x AA Batteries and the Raspberry Pi is powered by a 5V Power Bank.</p>
+
+        <p>Software</p>
+        <p>We forked a project from a blog which created a mechanical hand which can draw out SVG images.</p>
+        <p>So, we inherited the methods for parsing the SVG file and for performing interpolation on the Bezier curves found inside it to obtain the pixels.</p>
+        <p>However, we had to convert the pixels generated from the SVG into vectors for drawing, and further process it into relative angle and magnitude for the robot to move to for each stroke.</p>
+        <p>Finally, a separate program had to be written to read the angles and magnitudes generated and process it to be sent as signals for activating and deactivating the bot's motors.</p>
+
+    </div>
+
+    <hr class="dashed">
+
+    <div class="container" id="contact">
+    <form action="action_page.php">
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="singapore">Singapore</option>
+      <option value="usa">USA</option>
+      <option value="others">Others</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+    <!-- Image Directory
+    <section class="w3-row-padding w3-center w3-light-grey">
+    <article class="w3-third">
+        <p>Resume</p>
+        <img src="images/resume.png" alt="Random Name" style="height:500px">
+        <p>Look at my Experiences</p>
+    </article>
+    <article class="w3-third">
+        <p>Projects</p>
+        <img src="images/projects.png" alt="Random Name" style="height:500px">
+        <p>Check out my creations!</p>
+    </article>
+    <article class="w3-third">
+        <p>Contact</p>
+        <img src="images/contact_me.jpg" alt="Random Name" style="height:500px">
+        <p>Contact me</p>
+    </article>
+    </section> -->
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+        <a href="https://github.com/leafgecko"><i class="fa fa-github"></i></a>
+        <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+        <a href="https://www.linkedin.com/in/katherine-kee-wan-ting/"><i class="fa fa-linkedin"></i></a>
+        <p class="w3-medium">
+        Created by Katherine Kee Wan Ting </p>
+    </footer>
+
+    <script>
+    // Automatic Slideshow - change image every 3 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 3000);
+    }
+    </script>
+
   </body>
 </html>
+
+
 
 <!-- TODO : Background, Projects, LinkedIn and GitHub, Images, Blog posts -->
