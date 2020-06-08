@@ -12,21 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
 function addRandomQuote() {
 
   const quotes =
@@ -35,9 +20,7 @@ function addRandomQuote() {
       'The key question to keep asking is, Are you spending your time on the right things? Because time is all you have.', 
       'Showing gratitude is one of the simplest yet most powerful things humans can do for each other.'];
     
-//    const quotes = ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
+  // Pick a random quote.
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.

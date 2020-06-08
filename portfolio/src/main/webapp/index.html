@@ -15,7 +15,7 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="topnav" id="myTopnav">
+    <nav class="topnav" id="my-topnav">
         <a href="#home" class="w3-button w3-bar-item">Home</a>
         <a href="#resume" class="w3-button w3-bar-item">Resume</a>
         <a href="#projects" class="w3-button w3-bar-item">Projects</a>
@@ -27,13 +27,13 @@
 
     <!-- Slide Show -->
     <section>
-        <img class="mySlides" src="images/zion-national-park.jpeg"
+        <img class="my-slides" src="images/zion-national-park.jpeg"
         style="height:500px">
-        <img class="mySlides" src="images/bryce_canyon_snow_sunset.jpg"
+        <img class="my-slides" src="images/bryce_canyon_snow_sunset.jpg"
         style="height:500px">
-        <img class="mySlides" src="images/lake_tahoe.jpg"
+        <img class="my-slides" src="images/lake_tahoe.jpg"
         style="height:500px">
-        <img class="mySlides" src="images/yosemite_park.jpg"
+        <img class="my-slides" src="images/yosemite_park.jpg"
         style="height:500px">
     </section>
 
@@ -50,7 +50,7 @@
       <p>I enjoy travelling and having long walks out in nature, one of my favourite places was hiking at Zion National Park</p>
       
       <p>Click here to get a random quote from my favourite book 'The Last Lecture' by Randy Pausch:</p>
-      <button onclick="addRandomQuote()">Quote</button>
+      <button onclick="add-random-quote()">Quote</button>
       <div id="quote-container"></div>
     </div>
 
@@ -150,37 +150,18 @@
 
     <input type="submit" value="Submit">
 
-  </form>
-</div>
-
-    <!-- Image Directory
-    <section class="w3-row-padding w3-center w3-light-grey">
-    <article class="w3-third">
-        <p>Resume</p>
-        <img src="images/resume.png" alt="Random Name" style="height:500px">
-        <p>Look at my Experiences</p>
-    </article>
-    <article class="w3-third">
-        <p>Projects</p>
-        <img src="images/projects.png" alt="Random Name" style="height:500px">
-        <p>Check out my creations!</p>
-    </article>
-    <article class="w3-third">
-        <p>Contact</p>
-        <img src="images/contact_me.jpg" alt="Random Name" style="height:500px">
-        <p>Contact me</p>
-    </article>
-    </section> -->
-
+    </form>
+    </div>
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
         <a href="https://github.com/leafgecko"><i class="fa fa-github"></i></a>
-        <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
         <a href="https://www.linkedin.com/in/katherine-kee-wan-ting/"><i class="fa fa-linkedin"></i></a>
         <p class="w3-medium">
         Created by Katherine Kee Wan Ting </p>
     </footer>
+
+
 
     <script>
     // Automatic Slideshow - change image every 3 seconds
@@ -189,7 +170,7 @@
 
     function carousel() {
         var i;
-        var x = document.getElementsByClassName("mySlides");
+        var x = document.getElementsByClassName("my-slides");
         for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";
         }
