@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* Adds a random quote to the page */
 function addRandomQuote() {
-
   const quotes =
       ['We cannot change the cards we are dealt, just how we play the hand.', 
       'When it comes to men who are romantically interested in you, it’s really simple. Just ignore everything they say and only pay attention to what they do.', 
@@ -33,13 +33,13 @@ function addRandomQuote() {
 
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 function onNavClick() {
-  var x = document.getElementById("my-topnav");
-  if (x == null) {
-      return // no-op
-  }
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
+    var htmlELement = document.getElementById("my-topnav");
+    if (htmlELement == null) {
+        return // no-op
+    }
+    if (htmlELement.className === "topnav") {
+        htmlELement.className += " responsive";
+    } else {
+        htmlELementx.className = "topnav";
+    }
 }

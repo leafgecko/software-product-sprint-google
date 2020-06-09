@@ -1,16 +1,16 @@
-// Automatic Slideshow - change image every 3 seconds
+/* Automatic Slideshow - change image every 3 seconds */
 var myIndex = 0;
 
-function carousel() {
-    var x = document.getElementsByClassName("my-slides");
-    if (x == null) {
+function startPlayingCarousel() {
+    var htmlCollection = document.getElementsByClassName("my-slides");
+    if (htmlCollection == null) {
         return
     }
-    for (var i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
+    for (var i = 0; i < htmlCollection.length; i++) {
+        htmlCollection[i].style.display = "none";
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 3000);
+    if (myIndex > htmlCollection.length) {myIndex = 1}
+    htmlCollection[myIndex-1].style.display = "block";
+    setTimeout(startPlayingCarousel, 3000);
 }
