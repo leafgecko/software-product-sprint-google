@@ -12,17 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+/* Adds a random quote to the page */
+function addRandomQuote() {
+    const quotes =
+        ['We cannot change the cards we are dealt, just how we play the hand.', 
+        'When it comes to men who are romantically interested in you, it’s really simple. Just ignore everything they say and only pay attention to what they do.', 
+        'The key question to keep asking is, Are you spending your time on the right things? Because time is all you have.', 
+        'Showing gratitude is one of the simplest yet most powerful things humans can do for each other.'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+    // Pick a random quote.
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+    // Add it to the page.
+    const quoteContainer = document.getElementById('quote-container');
+    if (quoteContainer == null) {return} // no-op
+    quoteContainer.innerText = quote;
+}
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function onNavClick() {
+    var htmlELement = document.getElementById("my-topnav");
+    if (htmlELement == null) {return} // no-op
+    if (htmlELement.className === "topnav") {
+        htmlELement.className += " responsive";
+    } else {
+        htmlELementx.className = "topnav";
+    }
 }
