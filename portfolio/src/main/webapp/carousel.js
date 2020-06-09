@@ -3,9 +3,7 @@ var myIndex = 0;
 
 function startPlayingCarousel() {
     var htmlCollection = document.getElementsByClassName("my-slides");
-    if (htmlCollection == null) {
-        return
-    }
+    if (htmlCollection == null) {return}
     for (var i = 0; i < htmlCollection.length; i++) {
         htmlCollection[i].style.display = "none";
     }
