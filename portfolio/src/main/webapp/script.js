@@ -39,3 +39,10 @@ function onNavClick() {
         htmlELementx.className = "topnav";
     }
 }
+
+/* Adds one more quote to the page */
+function addMoreQuotes() {
+  fetch('/more-quotes').then(response => response.text()).then((quote) => {
+    document.getElementById('more-quotes-container').innerText = quote;
+  });
+}
