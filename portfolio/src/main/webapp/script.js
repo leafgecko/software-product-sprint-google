@@ -46,3 +46,12 @@ function addMoreQuotes() {
     document.getElementById('more-quotes-container').innerText = quote;
   });
 }
+
+/* Show favourite Pokemon to the page */
+function favouritePokemon() {
+    fetch('/data').then(response => response.json()) // parses the respoonse as JSON
+    .then((myObject) => { // now we can reference the fields in myObject!
+        console.log(myObject);
+        document.getElementById('pokemon-container').innerText = myObject;
+    });
+}
