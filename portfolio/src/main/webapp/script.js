@@ -48,7 +48,7 @@ function addMoreQuotes() {
 }
 
 /* Show favourite Pokemon to the page */
-function favouritePokemon() {
+function showFavouritePokemon() {
     fetch('/data').then(response => response.json()) // parses the respoonse as JSON
     .then((myObject) => { // now we can reference the fields in myObject!
         console.log(myObject);
