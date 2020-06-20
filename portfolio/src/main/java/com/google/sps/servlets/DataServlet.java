@@ -19,7 +19,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.google.gson.Gson;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,6 @@ public class DataServlet extends HttpServlet {
     String json = gson.toJson(pokemon);
     response.setContentType("text/html;");
     response.getWriter().println(json);
-
   }
 
 }
