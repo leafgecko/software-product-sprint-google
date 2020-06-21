@@ -28,8 +28,15 @@ import java.util.Arrays;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-  private final List<String> pokemonList = new ArrayList<String>(Arrays.asList("Totodile", "Treecko", "Charmander"));
+  private final List<String> pokemonList = new ArrayList<String>();
   private final Gson gson = new Gson(); 
+
+  @Override
+  public void init() {
+      pokemonList.add("Totodile");
+      pokemonList.add("Treecko");
+      pokemonList.add("Lucario");
+  }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
