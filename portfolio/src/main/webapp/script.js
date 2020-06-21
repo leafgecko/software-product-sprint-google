@@ -55,3 +55,12 @@ function showFavouritePokemon() {
         document.getElementById('pokemon-container').innerText = myObject;
     });
 }
+
+/* Show comments to the page */
+function showComments() {
+    fetch('/comment').then(response => response.json()) // parses the respoonse as JSON
+    .then((myObject) => { // now we can reference the fields in myObject!
+        console.log(myObject);
+        document.getElementById('comment-container').innerText = myObject;
+    });
+}

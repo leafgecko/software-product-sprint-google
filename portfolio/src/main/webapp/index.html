@@ -11,7 +11,7 @@
         <script src="carousel.js"></script>
     </head>
 
-    <body>
+    <body onload="showComments()">
 
     <!-- Navigation -->
     <!-- TODO: Fix navigation cutting into header title of each section -->
@@ -69,6 +69,18 @@
         <button onclick="showFavouritePokemon()">Pokemon</button>
         <div id="pokemon-container"></div>
     </div>
+
+    <!-- Comment Input-->
+    <form action="/comment" method="POST">
+
+      <p>Enter your comment:
+      <textarea name="comment-input">Type Here</textarea>
+      <br/><br/>
+      <input type="submit"/>
+    </form> 
+
+    <!-- List Comment-->
+    <div id="comment-container"></div>
 
     <hr class="dashed">
 
