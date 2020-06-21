@@ -27,7 +27,6 @@ import java.util.Arrays;
 /** Servlet that returns some example content. */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-
   private final List<String> pokemonList = new ArrayList<String>();
   private final Gson gson = new Gson(); 
 
