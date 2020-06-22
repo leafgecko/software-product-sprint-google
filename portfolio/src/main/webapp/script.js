@@ -50,17 +50,17 @@ function addMoreQuotes() {
 /* Show favourite Pokemon to the page */
 function showFavouritePokemon() {
     fetch('/data').then(response => response.json()) // parses the respoonse as JSON
-    .then((myObject) => { // now we can reference the fields in myObject!
-        console.log(myObject);
-        document.getElementById('pokemon-container').innerText = myObject;
+    .then((favPokemon) => { // now we can reference the fields in favPokemon!
+        console.log(favPokemon);
+        document.getElementById('pokemon-container').innerText = favPokemon;
     });
 }
 
 /* Show comments to the page */
 function showComments() {
     fetch('/comment').then(response => response.json()) // parses the respoonse as JSON
-    .then((myObject) => { // now we can reference the fields in myObject!
-        console.log(myObject);
-        document.getElementById('comment-container').innerText = myObject;
+    .then((commentList) => { // now we can reference the fields in commentList!
+        console.log(commentList);
+        document.getElementById('comment-container').innerText = commentList;
     });
 }

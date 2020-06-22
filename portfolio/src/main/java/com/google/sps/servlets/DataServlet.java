@@ -24,7 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 
-/** Servlet that returns some example content. */
+/** 
+* Servlet that returns the pokemonList
+* DataServlet initializes pokemonList and gson
+* init() appends hardcoded values to pokemonList
+* doGet() converts pokemonList to json and writes it to the response
+*/
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
   private final List<String> pokemonList = new ArrayList<String>();
