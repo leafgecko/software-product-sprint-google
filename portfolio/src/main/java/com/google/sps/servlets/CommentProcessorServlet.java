@@ -32,31 +32,25 @@ public final class CommentProcessorServlet extends HttpServlet {
   // Datastore stuff
   DatastoreService datastore =  DatastoreServiceFactory.getDatastoreService();
  
-
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
     String comment = request.getParameter("comment-input");
+
     if (comment != null && !comment.isEmpty()) {
-    //    commentList.add(comment); 
         Entity commentEntity = new Entity("Comment");
         commentEntity.setProperty("text", comment);
         commentEntity.setProperty("timestamp", System.currentTimeMillis());
         
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(commentEntity);
-
     }
     response.sendRedirect("/");
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // String json = gson.toJson(commentList);
-    // response.setContentType("text/html;");
-    // response.getWriter().println(json);
     Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
-
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
 
@@ -69,7 +63,6 @@ public final class CommentProcessorServlet extends HttpServlet {
       Comment comment = new Comment(id, text, timestamp);
       comments.add(comment);
     }
-
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(comments));
   }

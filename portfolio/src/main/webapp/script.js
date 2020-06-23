@@ -69,7 +69,7 @@ function showComments() {
     });
 }
 
-/** Creates an element that represents a comment */
+/* Creates an element that represents a comment */
 function createCommentElement(comment) {
     const commentElement = document.createElement('li');
     commentElement.className = "comment";

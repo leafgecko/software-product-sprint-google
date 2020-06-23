@@ -12,6 +12,3 @@ public final class Comment {
     this.timestamp = timestamp;
   }
 }
-// Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
-// DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-// PreparedQuery results = datastore.prepare(query);
