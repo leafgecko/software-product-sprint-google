@@ -61,6 +61,21 @@ function showComments() {
     fetch('/comment').then(response => response.json()) // parses the respoonse as JSON
     .then((commentList) => { // now we can reference the fields in commentList!
         console.log(commentList);
-        document.getElementById('comment-container').innerText = commentList;
+        const commentContainer = document.getElementById('comment-container')
+        commentList.forEach((comment) => {
+            commentContainer.appendChild(createCommentElement(comment));
+        })
     });
+}
+
+/* Creates an element that represents a comment */
+function createCommentElement(comment) {
+    const commentElement = document.createElement('li');
+    commentElement.className = "comment";
+
+    const textElement = document.createElement('span');
+    textElement.innerText = comment.text;
+
+    commentElement.appendChild(textElement);
+    return commentElement;
 }
