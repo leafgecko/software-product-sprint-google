@@ -12,8 +12,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import com.google.gson.Gson;
 import com.google.sps.data.Comment;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -26,12 +28,11 @@ import java.util.Arrays;
 @WebServlet("/comment")
 public final class CommentProcessorServlet extends HttpServlet {
 
-  // private final List<String> commentList = new ArrayList<String>();
   private final Gson gson = new Gson();
 
   // Datastore stuff
   DatastoreService datastore =  DatastoreServiceFactory.getDatastoreService();
- 
+
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.

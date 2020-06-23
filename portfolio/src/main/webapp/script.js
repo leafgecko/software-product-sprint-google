@@ -61,7 +61,6 @@ function showComments() {
     fetch('/comment').then(response => response.json()) // parses the respoonse as JSON
     .then((commentList) => { // now we can reference the fields in commentList!
         console.log(commentList);
-        // document.getElementById('comment-container').innerText = commentList;
         const commentContainer = document.getElementById('comment-container')
         commentList.forEach((comment) => {
             commentContainer.appendChild(createCommentElement(comment));
