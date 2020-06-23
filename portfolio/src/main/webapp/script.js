@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
 /* Adds a random quote to the page */
 function addRandomQuote() {
     const quotes =
@@ -78,4 +81,29 @@ function createCommentElement(comment) {
 
     commentElement.appendChild(textElement);
     return commentElement;
+}
+
+/** Creates a race percentage chart and adds it to the page. */
+function drawChart() {
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'Race');
+  data.addColumn('number', 'Count');
+        data.addRows([
+          ['Chinese', 76],
+          ['Malays', 15],
+          ['Indians', 7],
+          ['Others', 2]
+        ]);
+
+  const options = {
+    'title': 'Race Percentage',
+    'width':500,
+    'height':400
+  };
+
+  console.log("chart is created");
+
+  const chart = new google.visualization.PieChart(
+      document.getElementById('chart-container'));
+  chart.draw(data, options);
 }
